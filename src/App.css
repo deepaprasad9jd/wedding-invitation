@@ -225,16 +225,16 @@ h1 span {
   z-index: 1;
 }
 
-.scratchCanvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 28px;
-  cursor: crosshair;
-  touch-action: none;
-  z-index: 2;
-}
+<canvas
+  ref={canvasRef}
+  width="720"
+  height="360"
+  className="scratchCanvas"
+  onMouseDown={scratch}
+  onMouseMove={(e) => e.buttons === 1 && scratch(e)}
+  onTouchStart={scratch}
+  onTouchMove={scratch}
+/>
 
 .scratchCanvas:hover {
   filter: brightness(1.08);
