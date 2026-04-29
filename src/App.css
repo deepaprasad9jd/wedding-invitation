@@ -233,6 +233,9 @@ h1 span {
   border-radius: 28px;
   cursor: crosshair;
   touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  image-rendering: auto;
   z-index: 2;
 }
 .scratchCanvas:hover {
