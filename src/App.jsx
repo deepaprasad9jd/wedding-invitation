@@ -33,9 +33,9 @@ function RealScratchEffect() {
     ctx.arc(x, y, 28, 0, Math.PI * 2);
     ctx.fill();
   };
-
-  return (
-    <div className="scratchCard revealed realScratchBox">
+return (
+  <div className="scratchCard revealed">
+    <div className="realScratchBox">
       <div className="scratchContent">
         <h3>Event Details</h3>
 
@@ -61,13 +61,15 @@ function RealScratchEffect() {
       <canvas
         ref={canvasRef}
         width="720"
-        height="300"
+        height="360"
         className="scratchCanvas"
         onMouseMove={(e) => e.buttons === 1 && scratch(e)}
         onTouchMove={scratch}
       />
     </div>
-  );
+  </div>
+);
+             
 }
 
 export default function App() {
