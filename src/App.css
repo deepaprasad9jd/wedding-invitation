@@ -1,0 +1,457 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: #02140f;
+  color: #fff7e6;
+}
+
+.website {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(212, 166, 58, 0.22), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(212, 166, 58, 0.18), transparent 35%),
+    linear-gradient(135deg, #02140f, #06261d, #02140f);
+}
+
+/* Envelope */
+.envelopeCover {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #02140f, #0b2b21);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.envelope {
+  width: 330px;
+  height: 230px;
+  background: linear-gradient(135deg, #c6932e, #f2c75c);
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 35px 90px rgba(0,0,0,0.65);
+  animation: floatEnvelope 2s ease-in-out infinite alternate;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, #f1c65b, #bd8a28);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+.seal {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: #123428;
+  border: 2px solid #d9b95f;
+  border-radius: 50%;
+  color: #d9b95f;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding-top: 25px;
+  box-shadow: 0 0 35px rgba(217,185,95,0.45);
+}
+
+.seal h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.seal p {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@keyframes floatEnvelope {
+  from { transform: translateY(0); }
+  to { transform: translateY(-15px); }
+}
+
+/* Section common */
+section {
+  position: relative;
+  z-index: 2;
+}
+
+.scriptTitle {
+  text-align: center;
+  color: #d9b95f;
+  font-size: 46px;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0;
+}
+
+.smallDivider {
+  text-align: center;
+  color: #d9b95f;
+  margin: 18px auto 35px;
+}
+
+/* Hero */
+.hero {
+  padding: 70px 20px 55px;
+  display: flex;
+  justify-content: center;
+}
+
+.heroCard {
+  width: 100%;
+  max-width: 850px;
+  padding: 70px 45px;
+  text-align: center;
+  border-radius: 45px;
+  background: rgba(4, 24, 18, 0.9);
+  border: 1px solid rgba(217,185,95,0.55);
+  box-shadow:
+    0 35px 90px rgba(0,0,0,0.65),
+    inset 0 0 35px rgba(217,185,95,0.08);
+}
+
+.verse {
+  color: #d9b95f;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 82px;
+  color: #fff1b8;
+  font-weight: 400;
+  margin: 20px 0;
+  text-shadow: 0 0 25px rgba(217,185,95,0.35);
+}
+
+h1 span {
+  color: #d9b95f;
+}
+
+.heart {
+  color: #d9b95f;
+  font-size: 32px;
+}
+
+.intro {
+  max-width: 680px;
+  margin: auto;
+  color: rgba(255,247,230,0.78);
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+/* Countdown */
+.countdownSection {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.countdownGrid {
+  max-width: 850px;
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.countBox {
+  padding: 28px 15px;
+  border-radius: 18px;
+  background: rgba(4, 24, 18, 0.85);
+  border: 1px solid rgba(217,185,95,0.55);
+  box-shadow:
+    0 20px 55px rgba(0,0,0,0.45),
+    inset 0 0 25px rgba(217,185,95,0.08);
+}
+
+.countBox strong {
+  display: block;
+  font-size: 56px;
+  color: #fff1b8;
+  line-height: 1;
+}
+
+.countBox span {
+  display: block;
+  margin-top: 14px;
+  color: #d9b95f;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+/* Scratch */
+.scratchSection {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.scratchCard {
+  max-width: 720px;
+  min-height: 300px;
+  margin: auto;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #d4a63a, #f5d36d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff7e6;
+  cursor: pointer;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+  padding: 30px;
+}
+
+.scratchCard span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.scratchCard.revealed {
+  background: rgba(4, 24, 18, 0.92);
+  border: 1px solid rgba(217,185,95,0.55);
+}
+
+.scratchContent h3 {
+  color: #fff1b8;
+  font-size: 34px;
+  font-weight: 400;
+  margin: 0 0 18px;
+}
+
+.scratchItem {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(217,185,95,0.22);
+}
+
+.scratchItem:last-child {
+  border-bottom: none;
+}
+
+.scratchItem strong {
+  display: block;
+  color: #d9b95f;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.scratchItem p {
+  margin: 4px 0;
+  color: #fff7e6;
+}
+
+.scratchItem small {
+  color: rgba(255,247,230,0.72);
+}
+
+/* Venue */
+.venueSection {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.venueCard {
+  max-width: 720px;
+  margin: 28px auto;
+  padding: 38px;
+  border-radius: 32px;
+  background: rgba(4, 24, 18, 0.9);
+  border: 1px solid rgba(217,185,95,0.5);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+}
+
+.venueCard h3 {
+  color: #fff1b8;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.venueCard p {
+  color: rgba(255,247,230,0.78);
+  font-size: 17px;
+}
+
+.venueCard a {
+  display: inline-block;
+  margin-top: 18px;
+  background: linear-gradient(135deg, #b98b2e, #fff1b8, #d9b95f);
+  color: #061610;
+  padding: 14px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Message */
+.messageSection {
+  max-width: 760px;
+  margin: auto;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.messageForm {
+  margin-top: 35px;
+  display: grid;
+  gap: 18px;
+}
+
+.messageForm input,
+.messageForm select,
+.messageForm textarea {
+  width: 100%;
+  background: rgba(5, 14, 18, 0.95);
+  color: #fff7e6;
+  border: 1px solid rgba(217,185,95,0.35);
+  border-radius: 16px;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+}
+
+.messageForm textarea {
+  min-height: 120px;
+}
+
+.messageForm input:focus,
+.messageForm select:focus,
+.messageForm textarea:focus {
+  border-color: #d9b95f;
+  box-shadow: 0 0 20px rgba(217,185,95,0.22);
+}
+
+.messageForm button {
+  background: linear-gradient(135deg, #b98b2e, #fff1b8, #d9b95f);
+  color: #061610;
+  border: none;
+  padding: 16px;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 80px 20px;
+  color: #d9b95f;
+}
+
+footer h3 {
+  font-size: 42px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  .heroCard {
+    padding: 55px 24px;
+  }
+
+  .countdownGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .countBox strong {
+    font-size: 42px;
+  }
+
+  .scriptTitle {
+    font-size: 34px;
+  }
+  .realScratchBox {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scratchCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    touch-action: none;
+  }
+  
+  .dashboardSection {
+    max-width: 900px;
+    margin: auto;
+    padding: 70px 20px;
+    text-align: center;
+  }
+  
+  .dashboardCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 35px 0;
+  }
+  
+  .dashboardCards div {
+    border: 1px solid rgba(217, 185, 95, 0.5);
+    border-radius: 22px;
+    padding: 25px;
+    background: rgba(4, 24, 18, 0.9);
+  }
+  
+  .dashboardCards strong {
+    display: block;
+    font-size: 42px;
+    color: #fff1b8;
+  }
+  
+  .dashboardCards span {
+    color: #d9b95f;
+  }
+  
+  .rsvpTable {
+    display: grid;
+    gap: 14px;
+  }
+  
+  .rsvpRow {
+    text-align: left;
+    border: 1px solid rgba(217, 185, 95, 0.35);
+    border-radius: 18px;
+    padding: 18px;
+    background: rgba(4, 24, 18, 0.85);
+  }
+  
+  .rsvpRow b {
+    color: #fff1b8;
+  }
+  
+  .rsvpRow span {
+    float: right;
+    color: #d9b95f;
+  }
+  
+  .rsvpRow p,
+  .rsvpRow small {
+    color: rgba(255, 247, 230, 0.75);
+  }
+  
+  @media (max-width: 768px) {
+    .dashboardCards {
+      grid-template-columns: 1fr;
+    }
+  }
+}

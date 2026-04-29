@@ -1,0 +1,11 @@
+{
+  "name": "wedding-site",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {}
+}
