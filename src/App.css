@@ -200,41 +200,44 @@ h1 span {
 
 .scratchCard {
   max-width: 720px;
-  min-height: 300px;
   margin: auto;
   border-radius: 28px;
-  background: linear-gradient(135deg, #d4a63a, #f5d36d);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff7e6;
-  cursor: pointer;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.55);
-  padding: 30px;
 }
+
 .realScratchBox {
   position: relative;
-  max-width: 720px;
-  height: 360px;   /* IMPORTANT: fixed height */
-  margin: auto;
+  width: 100%;
+  height: 360px;
   border-radius: 28px;
-  overflow: hidden; /* THIS FIXES YOUR ISSUE */
+  overflow: hidden;
+  border: 1px solid rgba(217,185,95,0.55);
+  background: rgba(4, 24, 18, 0.92);
+  box-shadow:
+    0 35px 90px rgba(0,0,0,0.55),
+    inset 0 0 30px rgba(217,185,95,0.08);
 }
+
+.scratchContent {
+  position: absolute;
+  inset: 0;
+  padding: 35px;
+  text-align: center;
+  z-index: 1;
+}
+
 .scratchCanvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   border-radius: 28px;
-}
-.scratchCard span {
-  font-size: 22px;
-  font-weight: bold;
+  cursor: crosshair;
+  touch-action: none;
+  z-index: 2;
 }
 
-.scratchCard.revealed {
-  background: rgba(4, 24, 18, 0.92);
-  border: 1px solid rgba(217,185,95,0.55);
+.scratchCanvas:hover {
+  filter: brightness(1.08);
 }
 
 .scratchContent h3 {
