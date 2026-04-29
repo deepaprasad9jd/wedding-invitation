@@ -291,7 +291,7 @@ export default function App() {
       ))}
     </div>
   </section>
-
+)}
           <footer>
             <h3>We can’t wait to celebrate with you!</h3>
           </footer>
