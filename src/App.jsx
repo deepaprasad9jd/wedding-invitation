@@ -73,6 +73,7 @@ return (
 }
 
 export default function App() {
+  const isAdmin = new URLSearchParams(window.location.search).get("admin") === "deepa123";
   const audioRef = useRef(null);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -201,18 +202,34 @@ export default function App() {
             <RealScratchEffect />
           </section>
 
-          <section className="venueSection">
-            <h2 className="scriptTitle">Venue</h2>
-            <div className="smallDivider">♥</div>
+        <section className="venueSection">
+  <h2 className="scriptTitle">Venue</h2>
+  <div className="smallDivider">♥</div>
 
-            <div className="venueCard">
-              <h3>Engagement</h3>
-              <p>VTAM Auditorium, Cherthala</p>
-              <a href="https://maps.app.goo.gl/kTQfHZRyciJnhG4eA?g_st=ac" target="_blank" rel="noreferrer">
-                View Map
-              </a>
-            </div>
-          </section>
+  <div className="venueCard">
+    <h3>Engagement</h3>
+    <p>VTAM Auditorium, Cherthala</p>
+    <a href="https://maps.app.goo.gl/kTQfHZRyciJnhG4eA?g_st=ac" target="_blank">
+      View Map
+    </a>
+  </div>
+
+  <div className="venueCard">
+    <h3>Wedding</h3>
+    <p>Zion AOG Church, Coimbatore</p>
+    <a href="https://www.google.com/maps/dir//Zion+AOG+Church,+64+A,+Church+Rd,+Kuppakonam+Pudur,+K+K+Pudur,+Coimbatore,+Tamil+Nadu+641038,+India" target="_blank">
+      View Map
+    </a>
+  </div>
+
+  <div className="venueCard">
+    <h3>Reception</h3>
+    <p>SRM Hall, Coimbatore</p>
+    <a href="https://www.google.com/maps?daddr=548/1,+Balaji+Gardens,+Subramaniapalayam,+Coimbatore" target="_blank">
+      View Map
+    </a>
+  </div>
+</section>
 
           <section className="messageSection">
             <h2 className="scriptTitle">Send a Message</h2>
@@ -252,26 +269,28 @@ export default function App() {
             </form>
           </section>
 
-          <section className="dashboardSection">
-            <h2 className="scriptTitle">RSVP Dashboard</h2>
+        
+           {isAdmin && (
+  <section className="dashboardSection">
+    <h2 className="scriptTitle">RSVP Dashboard</h2>
 
-            <div className="dashboardCards">
-              <div><strong>{rsvps.length}</strong><span>Total RSVP</span></div>
-              <div><strong>{rsvps.filter((x) => x.attending === "Yes").length}</strong><span>Coming</span></div>
-              <div><strong>{rsvps.filter((x) => x.attending === "No").length}</strong><span>Not Coming</span></div>
-            </div>
+    <div className="dashboardCards">
+      <div><strong>{rsvps.length}</strong><span>Total RSVP</span></div>
+      <div><strong>{rsvps.filter((x) => x.attending === "Yes").length}</strong><span>Coming</span></div>
+      <div><strong>{rsvps.filter((x) => x.attending === "No").length}</strong><span>Not Coming</span></div>
+    </div>
 
-            <div className="rsvpTable">
-              {rsvps.map((item, index) => (
-                <div className="rsvpRow" key={index}>
-                  <b>{item.name}</b>
-                  <span>{item.attending}</span>
-                  <p>{item.message || "No message"}</p>
-                  <small>{item.date}</small>
-                </div>
-              ))}
-            </div>
-          </section>
+    <div className="rsvpTable">
+      {rsvps.map((item, index) => (
+        <div className="rsvpRow" key={index}>
+          <b>{item.name}</b>
+          <span>{item.attending}</span>
+          <p>{item.message || "No message"}</p>
+          <small>{item.date}</small>
+        </div>
+      ))}
+    </div>
+  </section>
 
           <footer>
             <h3>We can’t wait to celebrate with you!</h3>
