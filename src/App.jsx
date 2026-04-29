@@ -17,22 +17,35 @@ function RealScratchEffect() {
     ctx.fillText("✦ Scratch to Reveal ✦", canvas.width / 2, canvas.height / 2);
   }, []);
 
-  const scratch = (e) => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    const rect = canvas.getBoundingClientRect();
+ const scratch = (e) => {
+  if (e.cancelable) e.preventDefault();
 
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+  const canvas = canvasRef.current;
+  const ctx = canvas.getContext("2d");
+  const rect = canvas.getBoundingClientRect();
 
-    const x = clientX - rect.left;
-    const y = clientY - rect.top;
+  const touch = e.touches ? e.touches[0] : e;
 
-    ctx.globalCompositeOperation = "destination-out";
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+
+  const x = (touch.clientX - rect.left) * scaleX;
+  const y = (touch.clientY - rect.top) * scaleY;
+
+  ctx.globalCompositeOperation = "destination-out";
+
+  for (let i = 0; i < 20; i++) {
     ctx.beginPath();
-    ctx.arc(x, y, 28, 0, Math.PI * 2);
+    ctx.arc(
+      x + Math.random() * 20 - 10,
+      y + Math.random() * 20 - 10,
+      22,
+      0,
+      Math.PI * 2
+    );
     ctx.fill();
-  };
+  }
+};
 return (
   <div className="scratchCard revealed">
     <div className="realScratchBox">
