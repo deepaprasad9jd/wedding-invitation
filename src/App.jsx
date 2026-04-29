@@ -201,15 +201,18 @@ export default function App() {
             <div className="smallDivider">♥</div>
             <RealScratchEffect />
           </section>
-
-        <section className="venueSection">
+<section className="venueSection">
   <h2 className="scriptTitle">Venue</h2>
   <div className="smallDivider">♥</div>
 
   <div className="venueCard">
     <h3>Engagement</h3>
     <p>VTAM Auditorium, Cherthala</p>
-    <a href="https://maps.app.goo.gl/kTQfHZRyciJnhG4eA?g_st=ac" target="_blank">
+    <a
+      href="https://maps.app.goo.gl/kTQfHZRyciJnhG4eA?g_st=ac"
+      target="_blank"
+      rel="noreferrer"
+    >
       View Map
     </a>
   </div>
@@ -217,7 +220,11 @@ export default function App() {
   <div className="venueCard">
     <h3>Wedding</h3>
     <p>Zion AOG Church, Coimbatore</p>
-    <a href="https://www.google.com/maps/dir//Zion+AOG+Church,+64+A,+Church+Rd,+Kuppakonam+Pudur,+K+K+Pudur,+Coimbatore,+Tamil+Nadu+641038,+India" target="_blank">
+    <a
+      href="https://www.google.com/maps/dir//Zion+AOG+Church,+64+A,+Church+Rd,+Kuppakonam+Pudur,+K+K+Pudur,+Coimbatore,+Tamil+Nadu+641038,+India"
+      target="_blank"
+      rel="noreferrer"
+    >
       View Map
     </a>
   </div>
@@ -225,7 +232,11 @@ export default function App() {
   <div className="venueCard">
     <h3>Reception</h3>
     <p>SRM Hall, Coimbatore</p>
-    <a href="https://www.google.com/maps?daddr=548/1,+Balaji+Gardens,+Subramaniapalayam,+Coimbatore" target="_blank">
+    <a
+      href="https://www.google.com/maps?daddr=548/1,+Balaji+Gardens,+Subramaniapalayam,+Coimbatore"
+      target="_blank"
+      rel="noreferrer"
+    >
       View Map
     </a>
   </div>
