@@ -58,14 +58,14 @@ return (
         </div>
       </div>
 
-      <canvas
-        ref={canvasRef}
-        width="720"
-        height="360"
-        className="scratchCanvas"
-        onMouseMove={(e) => e.buttons === 1 && scratch(e)}
-        onTouchMove={scratch}
-      />
+    <canvas
+  ref={canvasRef}
+  width="720"
+  height="360"
+  className="scratchCanvas"
+  onMouseMove={(e) => e.buttons === 1 && scratch(e)}
+  onTouchMove={scratch}
+/>
     </div>
   </div>
 );
